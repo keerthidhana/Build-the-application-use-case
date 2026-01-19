@@ -38,15 +38,15 @@ jobs:
       - name: Login to Docker Hub
         uses: docker/login-action@v3
         with:
-          username: ${{ secrets.KEERTHI-DOCKER}}
-          password: ${{ secrets.KEERTHI-KEY}}
+          username: ${{ secrets.KEERTHI_DOCKER}}
+          password: ${{ secrets.KEERTHI_KEY}}
       - name: Build and Push Image
         uses: docker/build-push-action@v6
         with:
           context: ./python-app
           file: ./python-app/Dockerfile
           push: true
-          tags: ${{ secrets.KEERTHI-DOCKER }}/app:latest
+          tags: ${{ secrets.KEERTHI_DOCKER }}/app:latest
  
       # -------- Dependency Cache --------
       - name: Cache Maven
